@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mais Energia Solar | Energia solar em Pouso Alegre-MG</title>
+<meta name="description" content="Energia solar em Pouso Alegre-MG. Simulação gratuita, instalação com acompanhamento e pós-venda. Até 18x sem juros.">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--forest:#0d3b26;--deep:#071f15;--leaf:#0f5a3a;--lime:#92c83e;--paper:#f4f6ee;--ink:#10241a;--mute:#5c6f63;
+--d:'Bricolage Grotesque',system-ui,sans-serif;--b:'Figtree',system-ui,sans-serif;--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font:400 1.05rem/1.6 var(--b);color:var(--ink);background:var(--paper);overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--lime);outline-offset:3px}
+h1,h2,h3{font-family:var(--d);line-height:1.02;letter-spacing:-.02em}
+.wrap{padding-inline:var(--pad);max-width:1400px;margin:auto}
+.btn{display:inline-flex;align-items:center;gap:.6rem;background:var(--lime);color:var(--deep);font:600 1rem var(--b);padding:1rem 1.6rem;border-radius:999px;text-decoration:none;transition:transform .25s,background .25s;min-height:48px}
+.btn:hover{background:#a6dc50}
+.btn.ghost{background:none;color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.btn.ghost:hover{border-color:var(--lime);color:var(--lime);background:none}
+/* header */
+header{position:fixed;inset:0 0 auto;z-index:20;transition:background .3s,transform .3s}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:76px}
+header.solid{background:rgba(7,31,21,.92);backdrop-filter:blur(8px)}
+.brand{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:#fff;font:700 1.15rem var(--d)}
+.brand img{width:46px;height:46px;border-radius:50%}
+nav{display:flex;gap:2rem;align-items:center}
+nav a{color:#fff;text-decoration:none;font-weight:500;font-size:.95rem;opacity:.85}
+nav a:hover{opacity:1;color:var(--lime)}
+nav .btn{padding:.7rem 1.2rem;color:var(--deep);opacity:1}
+/* hero */
+.hero{background:var(--deep);color:#fff;min-height:100svh;display:grid;align-items:center;position:relative;overflow:hidden;padding:120px 0 80px}
+.hero::before{content:"";position:absolute;width:70vmax;height:70vmax;right:-25vmax;top:-30vmax;border-radius:50%;background:radial-gradient(circle,rgba(146,200,62,.28),transparent 62%)}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(24px,5vw,80px);align-items:center;position:relative}
+.hero h1{font-size:clamp(2.8rem,7.4vw,6.6rem);font-weight:800}
+.hero h1 em{font-style:normal;color:var(--lime)}
+.hero p{max-width:30em;margin:1.6rem 0 2.2rem;font-size:1.2rem;color:#cfe0d4}
+.cta-row{display:flex;flex-wrap:wrap;gap:.8rem}
+.hero-art{position:relative;justify-self:center;width:min(100%,430px)}
+.hero-art img{border-radius:22px;box-shadow:0 40px 80px -20px rgba(0,0,0,.6);transform:rotate(2.5deg)}
+.hero-art .tag{position:absolute;left:-8%;bottom:9%;background:var(--lime);color:var(--deep);padding:.8rem 1.1rem;border-radius:14px;font:700 1.05rem var(--d);line-height:1.15;box-shadow:0 14px 30px -10px rgba(0,0,0,.5)}
+.tag b{font-size:1.9rem;display:block}
+/* reveal on load */
+.rise{opacity:0;transform:translateY(28px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards}
+.rise:nth-child(2){animation-delay:.12s}.rise:nth-child(3){animation-delay:.24s}.rise:nth-child(4){animation-delay:.36s}
+@keyframes rise{to{opacity:1;transform:none}}
+/* pillars */
+.pillars{padding:clamp(70px,10vw,140px) 0}
+.pillars h2,.proc h2,.voices h2,.visit h2{font-size:clamp(2.1rem,5vw,4rem);max-width:14em}
+.rows{margin-top:3rem;border-top:1.5px solid var(--ink)}
+.row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:1.5rem;padding:2rem 0;border-bottom:1px solid rgba(16,36,26,.2);align-items:baseline;transition:padding-left .35s}
+.row:hover{padding-left:1rem}
+.row h3{font-size:clamp(1.6rem,3vw,2.5rem);color:var(--leaf)}
+.row p{color:var(--mute);max-width:34em}
+/* process */
+.proc{background:var(--forest);color:#fff;padding:clamp(70px,10vw,140px) 0}
+.proc ol{list-style:none;padding:0;margin-top:3rem;display:grid;grid-template-columns:repeat(4,1fr);gap:0;counter-reset:s}
+.proc li{padding:0 1.6rem 0 0;border-top:2px solid rgba(255,255,255,.2);padding-top:1.4rem;counter-increment:s;position:relative}
+.proc li::before{content:counter(s);position:absolute;top:-17px;left:0;width:32px;height:32px;border-radius:50%;background:var(--lime);color:var(--deep);font:700 .95rem var(--d);display:grid;place-items:center}
+.proc li:first-child{border-color:var(--lime)}
+.proc h3{font-size:1.4rem;margin:.9rem 0 .4rem}
+.proc li p{color:#bcd2c3;font-size:.98rem}
+/* offer band */
+.offer{display:grid;grid-template-columns:.8fr 1.2fr;align-items:center;gap:clamp(24px,5vw,80px);padding:clamp(60px,8vw,120px) 0}
+.offer-img{overflow:hidden;border-radius:22px;aspect-ratio:4/5;position:relative;max-width:460px;justify-self:center;width:100%}
+.offer-img img{position:absolute;inset:-8% 0;width:100%;height:116%;object-fit:cover}
+.offer h2{font-size:clamp(2.4rem,6vw,5rem)}
+.offer h2 span{color:var(--leaf)}
+.offer p{margin:1.2rem 0 2rem;color:var(--mute);max-width:30em}
+.offer .btn{background:var(--forest);color:#fff}.offer .btn:hover{background:var(--leaf)}
+/* voices */
+.voices{padding:0 0 clamp(70px,10vw,140px)}
+.voices .sub{color:var(--mute);margin-top:1rem}
+.q{margin-top:3rem;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,64px)}
+.q blockquote{border-left:4px solid var(--lime);padding-left:1.3rem;font:500 1.15rem/1.45 var(--d)}
+.q cite{display:block;margin-top:1rem;font:500 .9rem var(--b);color:var(--mute);font-style:normal}
+/* visit */
+.visit{background:var(--deep);color:#fff;padding:clamp(70px,10vw,130px) 0 40px}
+.visit .grid{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,6vw,100px);margin-top:3rem}
+.visit dt{color:var(--lime);font-weight:600;margin-top:1.6rem}
+.visit dd{font-size:1.2rem;margin:.2rem 0 0}
+.visit dd a{text-decoration:none;border-bottom:1px solid rgba(255,255,255,.3)}
+.visit dd a:hover{color:var(--lime)}
+.visit .cta-row{margin-top:2.4rem}
+footer{margin-top:clamp(60px,8vw,110px);padding-top:1.4rem;border-top:1px solid rgba(255,255,255,.15);display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;font-size:.82rem;color:#8ea899}
+footer a{text-decoration:none;color:#8ea899}footer a:hover{color:#fff}
+/* floating whatsapp */
+.wa{position:fixed;right:18px;bottom:18px;z-index:30;width:58px;height:58px;border-radius:50%;background:var(--lime);display:grid;place-items:center;box-shadow:0 10px 24px -6px rgba(0,0,0,.5);transition:transform .25s}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:var(--deep)}
+/* cursor */
+.cur{position:fixed;left:0;top:0;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--lime);mix-blend-mode:difference;pointer-events:none;z-index:99;transition:width .25s,height .25s,margin .25s;display:none}
+.cur.on{display:block}
+.cur.big{width:54px;height:54px;margin:-27px 0 0 -27px}
+@media(max-width:900px){
+ nav a:not(.btn){display:none}
+ .hero .wrap,.offer,.visit .grid{grid-template-columns:1fr}
+ .hero{padding-top:104px}
+ .hero-art{width:min(78%,340px);margin-top:1rem}
+ .row{grid-template-columns:1fr;gap:.5rem}
+ .proc ol{grid-template-columns:1fr;gap:2.4rem}
+ .q{grid-template-columns:1fr}
+ .cta-row .btn{flex:1 1 100%;justify-content:center}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rise{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<header id="top"><div class="wrap">
+ <a class="brand" href="#"><img src="img/logo.png" alt="Logo Mais Energia Solar" width="46" height="46">Mais Energia Solar</a>
+ <nav aria-label="Principal"><a href="#vantagens">Vantagens</a><a href="#como">Como funciona</a><a href="#clientes">Clientes</a><a href="#contato">Contato</a>
+ <a class="btn" href="https://wa.me/5535984033220?text=Ol%C3%A1!%20Quero%20uma%20simula%C3%A7%C3%A3o%20gratuita%20de%20energia%20solar." >Simulação grátis</a></nav>
+</div></header>
+
+<main>
+<section class="hero"><div class="wrap">
+ <div>
+  <h1 class="rise">Sua conta de luz pode pesar <em>menos.</em></h1>
+  <p class="rise">Você não precisa entender de energia solar, só de economia. A Mais Energia Solar cuida do projeto, da instalação e do suporte depois que o sistema está no ar.</p>
+  <div class="cta-row rise">
+   <a class="btn" href="https://wa.me/5535984033220?text=Ol%C3%A1!%20Quero%20uma%20simula%C3%A7%C3%A3o%20gratuita%20de%20energia%20solar.">Solicitar simulação gratuita</a>
+   <a class="btn ghost" href="#como">Ver como funciona</a>
+  </div>
+ </div>
+ <div class="hero-art rise" data-par="-0.06">
+  <img src="img/campanha-economia.png" alt="Campanha Mais Energia Solar: sua conta de luz pode pesar menos" width="665" height="836" fetchpriority="high">
+  <div class="tag">Até<b>18x</b>sem juros</div>
+ </div>
+</div></section>
+
+<section class="pillars" id="vantagens"><div class="wrap">
+ <h2>Três motivos para trocar a conta por um sistema seu.</h2>
+ <div class="rows">
+  <div class="row"><h3>Mais economia</h3><p>Todos os meses. A energia gerada no seu telhado reduz o que você paga na conta de luz.</p></div>
+  <div class="row"><h3>Energia limpa</h3><p>Renovável, vinda do sol. Você gera a própria energia em vez de depender só da rede.</p></div>
+  <div class="row"><h3>Valorização do imóvel</h3><p>Uma casa ou empresa com energia solar instalada ganha um diferencial a mais.</p></div>
+ </div>
+</div></section>
+
+<section class="proc" id="como"><div class="wrap">
+ <h2>Do primeiro contato ao pós-instalação, com a mesma equipe.</h2>
+ <ol>
+  <li><h3>Simulação gratuita</h3><p>Você chama no WhatsApp e a equipe tira as dúvidas e simula a sua economia.</p></li>
+  <li><h3>Projeto</h3><p>O sistema é dimensionado para o seu imóvel e o seu consumo.</p></li>
+  <li><h3>Instalação</h3><p>A equipe instala o sistema com organização e combina os prazos com você.</p></li>
+  <li><h3>Suporte</h3><p>Depois da instalação, o atendimento continua para o que você precisar.</p></li>
+ </ol>
+</div></section>
+
+<section class="wrap offer" id="oferta">
+ <div class="offer-img"><img src="img/campanha-outubro.png" alt="Campanha de outubro: até 18x sem juros em energia solar" data-par="0.08" loading="lazy" width="671" height="845"></div>
+ <div>
+  <h2>Comece o mês pensando em <span>economia.</span></h2>
+  <p>Condição de pagamento em até 18x sem juros. Chame a equipe e veja como fica para o seu imóvel.</p>
+  <a class="btn" href="https://wa.me/5535997673609?text=Ol%C3%A1!%20Quero%20saber%20sobre%20o%20parcelamento%20em%2018x.">Falar sobre o parcelamento</a>
+ </div>
+</section>
+
+<section class="voices wrap" id="clientes">
+ <h2>Quem instalou, recomenda.</h2>
+ <p class="sub">Nota 4,8 no Google, com 16 avaliações de clientes de Pouso Alegre e região.</p>
+ <div class="q">
+  <figure><blockquote>“Tiraram todas as minhas dúvidas e me passaram confiança durante todo o processo.”</blockquote><cite>João Paulo Silva, avaliação no Google</cite></figure>
+  <figure><blockquote>“Excelente atendimento, retiro todas minhas dúvidas. Excelente pós vendas.”</blockquote><cite>bradlley francys, avaliação no Google</cite></figure>
+  <figure><blockquote>“A instalação do sistema foi realizada dentro do prazo, com organização.”</blockquote><cite>Priscila Santos, avaliação no Google</cite></figure>
+ </div>
+</section>
+</main>
+
+<section class="visit" id="contato"><div class="wrap">
+ <h2>Vamos simular a sua economia?</h2>
+ <div class="grid">
+  <dl>
+   <dt>Endereço</dt><dd>Av. Dr. João Beraldo, 411, sala 4<br>Centro, Pouso Alegre-MG, 37550-074</dd>
+   <dt>WhatsApp</dt><dd><a href="https://wa.me/5535984033220">(35) 98403-3220</a><br><a href="https://wa.me/5535997673609">(35) 99767-3609</a></dd>
+   <dt>Atendimento</dt><dd>Fechamos às 17:30</dd>
+  </dl>
+  <div>
+   <p style="color:#cfe0d4;font-size:1.15rem">Fale com a equipe, tire as dúvidas e receba a sua simulação sem custo.</p>
+   <div class="cta-row">
+    <a class="btn" href="https://wa.me/5535984033220?text=Ol%C3%A1!%20Quero%20uma%20simula%C3%A7%C3%A3o%20gratuita%20de%20energia%20solar.">Chamar no WhatsApp</a>
+    <a class="btn ghost" href="https://www.google.com/maps/search/?api=1&query=Av.+Doutor+Jo%C3%A3o+Beraldo+411+Pouso+Alegre+MG" target="_blank" rel="noopener">Como chegar</a>
+   </div>
+  </div>
+ </div>
+ <footer><span>© 2026 Mais Energia Solar</span><span>Desenvolvido por ADS — Agência Digital &amp; Sites</span></footer>
+</div></section>
+
+<a class="wa" href="https://wa.me/5535984033220?text=Ol%C3%A1!%20Quero%20uma%20simula%C3%A7%C3%A3o%20gratuita%20de%20energia%20solar." aria-label="Chamar no WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.300 1.200-1.800 1.200-.5.1-1 .2-3.300-.7-2.800-1.100-4.600-4-4.700-4.200-.1-.2-1.100-1.400-1.100-2.700s.7-1.900.9-2.200c.2-.2.5-.3.700-.3h.5c.2 0 .4 0 .6.500l.8 1.900c.1.200.1.300 0 .5l-.3.400-.4.400c-.1.200-.3.300-.1.600.2.300.7 1.200 1.500 1.900 1 .9 1.800 1.200 2.100 1.300.3.100.4.100.6-.1l.8-1c.2-.3.400-.2.600-.1l1.800.9c.3.100.4.200.5.300.1.200.1.800-.1 1.400z"/></svg></a>
+<div class="cur" aria-hidden="true"></div>
+
+<script>
+(function(){
+ var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches,wide=innerWidth>900;
+ var hd=document.querySelector('header');
+ addEventListener('scroll',function(){hd.classList.toggle('solid',scrollY>40)},{passive:true});
+ // parallax só no desktop, só em 2 elementos
+ var els=[].slice.call(document.querySelectorAll('[data-par]'));
+ if(!rm&&wide&&els.length){var t=false;
+  var upd=function(){els.forEach(function(e){var r=e.getBoundingClientRect(),c=r.top+r.height/2-innerHeight/2,k=parseFloat(e.dataset.par);e.style.transform='translate3d(0,'+(c*k).toFixed(1)+'px,0)'});t=false};
+  addEventListener('scroll',function(){if(!t){t=true;requestAnimationFrame(upd)}},{passive:true});upd();
+ }
+ // cursor discreto
+ var cur=document.querySelector('.cur');
+ if(fine){cur.classList.add('on');var x=0,y=0,cx=0,cy=0;
+  addEventListener('pointermove',function(e){x=e.clientX;y=e.clientY},{passive:true});
+  (function loop(){cx+=(x-cx)*(rm?1:.2);cy+=(y-cy)*(rm?1:.2);cur.style.transform='translate3d('+cx+'px,'+cy+'px,0)';requestAnimationFrame(loop)})();
+  document.querySelectorAll('a,button').forEach(function(a){a.addEventListener('pointerenter',function(){cur.classList.add('big')});a.addEventListener('pointerleave',function(){cur.classList.remove('big')})});
+ }
+})();
+</script>
+</body>
+</html>
